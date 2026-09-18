@@ -1,0 +1,501 @@
+/* =========================================
+   SAMPLE DECISION PAGE
+========================================= */
+
+.sample-page {
+  min-height: 100vh;
+  background: #f8f6ef;
+  color: #292929;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.sample-header {
+  width: 100%;
+  height: 72px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e0d7;
+}
+
+.sample-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2bbbd7;
+  letter-spacing: -0.5px;
+}
+
+.sample-back-button {
+  padding: 9px 16px;
+  background: transparent;
+  border: 1px solid #d7d5ce;
+  border-radius: 8px;
+  color: #555555;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sample-back-button:hover {
+  border-color: #2bbbd7;
+  color: #159bb8;
+  background: #f7fdfe;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.sample-container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 55px 25px 70px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.sample-heading {
+  max-width: 800px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.sample-label,
+.small-label {
+  margin: 0 0 10px;
+  color: #2bbbd7;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.sample-heading h1 {
+  margin: 0 0 14px;
+  color: #292929;
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.sample-heading > p:last-child {
+  margin: 0;
+  color: #777777;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   DECISION CARD
+========================================= */
+
+.sample-decision-card {
+  background: #ffffff;
+  border: 1px solid #e3e0d7;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 8px 30px rgba(41, 41, 41, 0.05);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.sample-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.sample-card-top .small-label {
+  margin-bottom: 8px;
+}
+
+.sample-card-top h2 {
+  margin: 0;
+  color: #292929;
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.sample-status {
+  flex-shrink: 0;
+  padding: 7px 13px;
+  background: #fff7df;
+  border: 1px solid #f0dfaa;
+  border-radius: 20px;
+  color: #92751e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   CONTENT BLOCKS
+========================================= */
+
+.sample-block {
+  padding: 27px 0;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.sample-block h3 {
+  margin: 0 0 13px;
+  color: #292929;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sample-block > p {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.sample-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sample-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 16px;
+  background: #faf9f5;
+  border: 1px solid #e8e5dc;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.sample-option:hover {
+  border-color: #bcebf3;
+  background: #f7fdfe;
+}
+
+.sample-option > span {
+  min-width: 30px;
+  color: #2bbbd7;
+  font-size: 12px;
+  font-weight: 700;
+  padding-top: 2px;
+}
+
+.sample-option strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #292929;
+  font-size: 14px;
+}
+
+.sample-option p {
+  margin: 0;
+  color: #777777;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   FACTORS
+========================================= */
+
+.factor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.factor-card {
+  padding: 17px;
+  background: #faf9f5;
+  border: 1px solid #e8e5dc;
+  border-radius: 10px;
+}
+
+.factor-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #777777;
+  font-size: 12px;
+}
+
+.factor-card strong {
+  color: #292929;
+  font-size: 15px;
+}
+
+
+/* =========================================
+   REFLECTION
+========================================= */
+
+.sample-reflection {
+  margin-top: 27px;
+  padding: 22px;
+  background: #e9f9fc;
+  border: 1px solid #bcebf3;
+  border-radius: 12px;
+}
+
+.sample-reflection .small-label {
+  margin-bottom: 8px;
+}
+
+.sample-reflection p:last-child {
+  margin: 0;
+  color: #4f6870;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.sample-card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 25px;
+}
+
+.sample-card-footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sample-card-footer span {
+  color: #999999;
+  font-size: 12px;
+}
+
+.sample-card-footer strong {
+  color: #555555;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.sample-cta {
+  margin-top: 35px;
+  padding: 38px 25px;
+  text-align: center;
+  background: #292929;
+  border-radius: 16px;
+}
+
+.sample-cta h2 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.sample-cta p {
+  margin: 0 0 22px;
+  color: #cccccc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sample-cta button {
+  padding: 12px 25px;
+  background: #2bbbd7;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sample-cta button:hover {
+  background: #159bb8;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .sample-header {
+    padding: 0 28px;
+  }
+
+  .sample-container {
+    padding: 45px 22px 60px;
+  }
+
+  .sample-heading h1 {
+    font-size: 32px;
+  }
+
+  .factor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .sample-header {
+    height: auto;
+    min-height: 68px;
+    padding: 14px 18px;
+    gap: 12px;
+  }
+
+  .sample-logo {
+    font-size: 21px;
+  }
+
+  .sample-back-button {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .sample-container {
+    padding: 32px 14px 45px;
+  }
+
+  .sample-heading {
+    margin-bottom: 25px;
+  }
+
+  .sample-heading h1 {
+    font-size: 27px;
+  }
+
+  .sample-heading > p:last-child {
+    font-size: 13px;
+  }
+
+  .sample-decision-card {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .sample-card-top {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .sample-card-top h2 {
+    font-size: 21px;
+  }
+
+  .sample-status {
+    align-self: flex-start;
+  }
+
+  .sample-block {
+    padding: 22px 0;
+  }
+
+  .factor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-card-footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .sample-cta {
+    margin-top: 25px;
+    padding: 30px 18px;
+  }
+
+  .sample-cta h2 {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 375px) {
+
+  .sample-header {
+    padding: 12px;
+  }
+
+  .sample-logo {
+    font-size: 19px;
+  }
+
+  .sample-back-button {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .sample-container {
+    padding: 28px 10px 40px;
+  }
+
+  .sample-heading h1 {
+    font-size: 24px;
+  }
+
+  .sample-decision-card {
+    padding: 18px 13px;
+  }
+
+  .sample-option {
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .sample-option strong {
+    font-size: 13px;
+  }
+
+  .sample-option p {
+    font-size: 12px;
+  }
+
+  .sample-cta {
+    padding: 27px 14px;
+  }
+
+  .sample-cta button {
+    width: 100%;
+  }
+}

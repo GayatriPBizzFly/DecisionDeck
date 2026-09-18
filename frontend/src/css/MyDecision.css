@@ -1,0 +1,1223 @@
+/* =========================================================
+   MY DECISION SECTION
+   ========================================================= */
+
+.my-decision-page {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.my-decision-header {
+  margin-bottom: 28px;
+}
+
+.my-decision-header h1 {
+  margin: 0 0 8px;
+  color: #292929;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.my-decision-header p {
+  margin: 0;
+  color: #777777;
+  font-size: 14px;
+}
+
+/* =========================
+   CREATE DECISION CARD
+   ========================= */
+
+.create-decision-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e3e0d7;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(41, 41, 41, 0.04);
+}
+
+.create-decision-header {
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.create-decision-header h2 {
+  margin: 0 0 7px;
+  color: #292929;
+  font-size: 21px;
+}
+
+.create-decision-header p {
+  margin: 0;
+  color: #777777;
+  font-size: 13px;
+}
+
+/* =========================
+   FORM
+   ========================= */
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #444444;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  border: 1px solid #dcd9d0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #292929;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 46px;
+  padding: 0 13px;
+}
+
+.form-group textarea {
+  height: 125px;
+  min-height: 125px;
+  max-height: 125px;
+  padding: 13px;
+  resize: none;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaaaaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #2bbbd7;
+  box-shadow: 0 0 0 3px rgba(43, 187, 215, 0.12);
+}
+
+/* =========================
+   STATUS + PRIORITY
+   ========================= */
+
+.decision-form-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   CREATE BUTTON
+   ========================= */
+
+.create-decision-button {
+  width: 100%;
+  min-height: 46px;
+  border: none;
+  border-radius: 9px;
+  background: #292929;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.create-decision-button:hover {
+  background: #2bbbd7;
+  transform: translateY(-1px);
+}
+
+.create-decision-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   CREATE DECISION - SPACING
+   ========================================================= */
+
+.create-decision-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.form-group label {
+  margin: 0 0 9px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  margin: 0;
+}
+
+/* Fixed Description Textarea */
+
+.form-group textarea.decision-description-input {
+  height: 125px;
+  min-height: 125px;
+  max-height: 125px;
+  resize: none;
+  overflow-y: auto;
+}
+
+/* =========================================================
+   DECISION OPTIONS & CRITERIA
+   ========================================================= */
+
+.decision-options-group,
+.decision-criteria-group {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Add input row */
+
+.option-input-row,
+.criteria-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.option-input-row input,
+.criteria-input-row input {
+  flex: 1;
+}
+
+/* Add button */
+
+.option-input-row button,
+.criteria-input-row button {
+  width: auto;
+  min-width: 70px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 7px;
+  background: #292929;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.option-input-row button:hover,
+.criteria-input-row button:hover {
+  background: #2bbbd7;
+}
+
+/* Limit text */
+
+.input-limit {
+  color: #999999;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Added options / criteria list */
+
+.option-list,
+.criteria-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Decision Option Item */
+
+.decision-option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  background: #fcfbf7;
+  border: 1px solid #e3e0d7;
+  border-radius: 8px;
+}
+
+.decision-option-item span {
+  color: #444444;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.decision-option-item button {
+  width: auto;
+  padding: 2px 6px;
+  border: none;
+  background: transparent;
+  color: #888888;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.decision-option-item button:hover {
+  color: #e53935;
+}
+
+/* =========================================================
+   CRITERIA WEIGHT
+   ========================================================= */
+
+.criteria-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.criteria-input-row input {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.criteria-input-row button:hover {
+  background: #2bbbd7;
+}
+
+/* Decision Criteria Item */
+
+.decision-criteria-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  background: #fcfbf7;
+  border: 1px solid #e3e0d7;
+  border-radius: 8px;
+}
+
+.criteria-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.criteria-info span {
+  color: #444444;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.criteria-info input {
+  width: 65px !important;
+  height: 34px !important;
+  padding: 0 8px !important;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.decision-criteria-item > button {
+  width: auto;
+  padding: 2px 6px;
+  border: none;
+  background: transparent;
+  color: #888888;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.decision-criteria-item > button:hover {
+  color: #e53935;
+}
+
+/* Total Weight */
+
+.criteria-total-weight {
+  margin-top: 10px;
+  color: #777777;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   DECISION SCORING
+   ========================================================= */
+
+.decision-scoring-group {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.decision-scoring-group > label {
+  display: block;
+  margin-bottom: 12px;
+  color: #444444;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.decision-scoring-group > button {
+  width: auto;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #292929;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.decision-scoring-group > button:hover {
+  background: #2bbbd7;
+}
+
+.decision-scoring-table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.scoring-option {
+  padding: 20px;
+  background: #fcfbf7;
+  border: 1px solid #e3e0d7;
+  border-radius: 12px;
+}
+
+.scoring-option h4 {
+  margin: 0 0 15px;
+  color: #292929;
+  font-size: 16px;
+}
+
+.scoring-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-top: 1px solid #eeeae1;
+}
+
+.scoring-row span {
+  color: #666666;
+  font-size: 13px;
+}
+
+.scoring-row input {
+  width: 70px !important;
+  height: 38px !important;
+  padding: 0 10px !important;
+  text-align: center;
+  border: 1px solid #dcd9d0;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #292929;
+  font-size: 14px;
+}
+
+.scoring-row input:focus {
+  outline: none;
+  border-color: #2bbbd7;
+  box-shadow: 0 0 0 3px rgba(43, 187, 215, 0.12);
+}
+
+/* =========================================================
+   EDIT DECISION
+   ========================================================= */
+
+.edit-decision-form {
+  width: 100%;
+  background: #fcfbf7;
+  border: 1px solid #e3e0d7;
+  border-radius: 12px;
+  padding: 22px;
+  margin-top: 15px;
+  box-sizing: border-box;
+}
+
+.edit-decision-form input,
+.edit-decision-form textarea,
+.edit-decision-form select {
+  width: 100%;
+  padding: 12px 13px;
+  margin-bottom: 15px;
+  border: 1px solid #dcd9d0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #292929;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.edit-decision-form textarea {
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  resize: none;
+  overflow-y: auto;
+}
+
+/* Fixed edit description textarea */
+
+.edit-decision-form textarea.edit-description-input {
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  resize: none;
+}
+
+.edit-decision-form input:focus,
+.edit-decision-form textarea:focus,
+.edit-decision-form select:focus {
+  border-color: #2bbbd7;
+  box-shadow: 0 0 0 3px rgba(43, 187, 215, 0.12);
+}
+
+.edit-decision-form button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #292929;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.edit-decision-form button:hover {
+  background: #2bbbd7;
+}
+
+.edit-decision-form .cancel-button {
+  background: #e9e7df;
+  color: #444444;
+}
+
+.edit-decision-form .cancel-button:hover {
+  background: #dcd9d0;
+}
+
+/* =========================================================
+   EDIT DECISION SECTIONS
+   ========================================================= */
+
+.edit-section {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid #e3e0d7;
+}
+
+.edit-section h4 {
+  margin: 0 0 12px;
+  color: #292929;
+  font-size: 14px;
+}
+
+.edit-criteria-row {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 10px;
+}
+
+.edit-score-option {
+  padding: 15px;
+  margin-bottom: 12px;
+  background: #ffffff;
+  border: 1px solid #e3e0d7;
+  border-radius: 9px;
+}
+
+.edit-score-option h5 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #292929;
+}
+
+.edit-score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 8px 0;
+  border-top: 1px solid #eeeae1;
+}
+
+.edit-score-row input {
+  width: 70px !important;
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+/* =========================================================
+   ALL DECISIONS
+   ========================================================= */
+
+.all-decisions-section {
+  margin-top: 30px;
+}
+
+/* Decision list */
+
+.my-decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Main decision card */
+
+.decision-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e3e0d7;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 5px 20px rgba(41, 41, 41, 0.04);
+  box-sizing: border-box;
+}
+
+/* Card header */
+
+.decision-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.decision-card-header h3 {
+  margin: 0;
+  color: #292929;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Priority badge */
+
+.priority-badge {
+  flex-shrink: 0;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Priority colors */
+
+.priority-badge.low {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.priority-badge.medium {
+  background: #fff4d6;
+  color: #9a6b00;
+}
+
+.priority-badge.high {
+  background: #fde8e8;
+  color: #c62828;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.decision-description {
+  margin-bottom: 22px;
+  padding: 15px 17px;
+  background: #faf9f5;
+  border-left: 3px solid #2bbbd7;
+  border-radius: 8px;
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.decision-options-display {
+  margin-top: 20px;
+  padding: 17px;
+  background: #fcfbf7;
+  border: 1px solid #e3e0d7;
+  border-radius: 11px;
+}
+
+.decision-options-display h4,
+.decision-criteria-display h4,
+.decision-scores-display h4,
+.weighted-result-section h4 {
+  margin: 0 0 13px;
+  color: #292929;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.decision-options-display ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.decision-options-display li {
+  position: relative;
+  margin-bottom: 8px;
+  padding: 10px 12px 10px 30px;
+  background: #ffffff;
+  border: 1px solid #eeeae1;
+  border-radius: 7px;
+  color: #555555;
+  font-size: 13px;
+}
+
+.decision-options-display li:last-child {
+  margin-bottom: 0;
+}
+
+.decision-options-display li::before {
+  content: "•";
+  position: absolute;
+  left: 12px;
+  color: #2bbbd7;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* =========================================================
+   CRITERIA & WEIGHTS
+   ========================================================= */
+
+.decision-criteria-display {
+  margin-top: 20px;
+  padding: 17px;
+  background: #fcfbf7;
+  border: 1px solid #e3e0d7;
+  border-radius: 11px;
+}
+
+.decision-criteria-display ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.decision-criteria-display li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #eeeae1;
+  border-radius: 7px;
+  color: #555555;
+  font-size: 13px;
+}
+
+.decision-criteria-display li span:last-child {
+  flex-shrink: 0;
+  padding: 4px 9px;
+  border-radius: 12px;
+  background: #e8f8fb;
+  color: #168da5;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   OPTION SCORES
+   ========================================================= */
+
+.decision-scores-display {
+  margin-top: 20px;
+  padding: 17px;
+  background: #fcfbf7;
+  border: 1px solid #e3e0d7;
+  border-radius: 11px;
+}
+
+.decision-score-option {
+  margin-top: 12px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #e3e0d7;
+  border-radius: 9px;
+}
+
+.decision-score-option:first-of-type {
+  margin-top: 0;
+}
+
+.decision-score-option h5 {
+  margin: 0 0 10px;
+  color: #292929;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.scoring-display-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 9px 0;
+  border-top: 1px solid #eeeae1;
+  color: #666666;
+  font-size: 13px;
+}
+
+.scoring-display-row span:last-child {
+  min-width: 45px;
+  text-align: center;
+  padding: 4px 7px;
+  background: #f2f8f9;
+  border-radius: 6px;
+  color: #168da5;
+  font-weight: 700;
+}
+
+/* =========================================================
+   STATUS + DATE
+   ========================================================= */
+
+.decision-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid #eeeae1;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Status colors */
+
+.status-badge.pending {
+  background: #fff4d6;
+  color: #9a6b00;
+}
+
+.status-badge.in-progress {
+  background: #e8f4ff;
+  color: #1976d2;
+}
+
+.status-badge.completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.decision-date {
+  color: #999999;
+  font-size: 12px;
+}
+
+/* =========================================================
+   EDIT / DELETE BUTTONS
+   ========================================================= */
+
+.decision-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.decision-actions button {
+  min-width: 75px;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 7px;
+  background: #292929;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.decision-actions button:hover {
+  background: #2bbbd7;
+  transform: translateY(-1px);
+}
+
+.decision-actions button:active {
+  transform: translateY(0);
+}
+
+/* Delete button */
+
+.decision-actions button:last-child {
+  background: #f5eeee;
+  color: #c62828;
+}
+
+.decision-actions button:last-child:hover {
+  background: #fde1e1;
+  color: #b71c1c;
+}
+
+/* =========================================================
+   EMPTY DECISIONS
+   ========================================================= */
+
+.empty-decisions {
+  padding: 50px 25px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px dashed #dcd9d0;
+  border-radius: 14px;
+}
+
+.empty-decisions > div {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.empty-decisions h3 {
+  margin: 0 0 7px;
+  color: #292929;
+  font-size: 17px;
+}
+
+.empty-decisions p {
+  margin: 0;
+  color: #888888;
+  font-size: 13px;
+}
+
+/* =========================================================
+   WEIGHTED RESULT
+   ========================================================= */
+
+.weighted-result-section {
+  width: 100%;
+  margin-top: 20px;
+  padding: 18px;
+  background: #f7fcfd;
+  border: 1px solid #d8edf1;
+  border-radius: 11px;
+  box-sizing: border-box;
+}
+
+.weighted-result-section p {
+  margin: 0;
+  color: #777777;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.weighted-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weighted-result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 13px;
+  background: #ffffff;
+  border: 1px solid #e3e0d7;
+  border-radius: 7px;
+  color: #555555;
+  font-size: 13px;
+}
+
+.weighted-result-item strong {
+  color: #168da5;
+  font-size: 14px;
+}
+
+/* =========================================================
+   EDIT FORM LABELS
+   ========================================================= */
+
+.edit-decision-form label {
+  display: block;
+  margin: 0 0 7px;
+  color: #444444;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .my-decision-page {
+    max-width: 100%;
+  }
+
+  .my-decision-header h1 {
+    font-size: 28px;
+  }
+
+  .create-decision-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .my-decision-header {
+    margin-bottom: 20px;
+  }
+
+  .my-decision-header h1 {
+    font-size: 25px;
+  }
+
+  .my-decision-header p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .create-decision-card {
+    padding: 20px 16px;
+    border-radius: 13px;
+  }
+
+  .create-decision-header {
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+  }
+
+  .create-decision-header h2 {
+    font-size: 19px;
+  }
+
+  .decision-form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .create-decision-form {
+    gap: 18px;
+  }
+
+  /* Options and criteria become vertical on mobile */
+
+  .option-input-row,
+  .criteria-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .option-input-row button,
+  .criteria-input-row button {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .criteria-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .criteria-info span {
+    overflow-wrap: anywhere;
+  }
+
+  .decision-scoring-table {
+    grid-template-columns: 1fr;
+  }
+
+  .scoring-option {
+    padding: 17px;
+  }
+
+  .decision-card {
+    padding: 18px;
+    border-radius: 13px;
+  }
+
+  .decision-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .decision-card-header h3 {
+    font-size: 18px;
+  }
+
+  .decision-description {
+    padding: 13px 14px;
+    font-size: 13px;
+  }
+
+  .decision-options-display,
+  .decision-criteria-display,
+  .decision-scores-display {
+    padding: 14px;
+  }
+
+  .decision-criteria-display li {
+    align-items: flex-start;
+  }
+
+  .decision-meta {
+    gap: 8px;
+  }
+
+  .decision-actions {
+    width: 100%;
+  }
+
+  .decision-actions button {
+    flex: 1;
+  }
+
+  .weighted-result-item {
+    gap: 10px;
+  }
+
+  .edit-decision-form {
+    padding: 17px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .my-decision-header h1 {
+    font-size: 22px;
+  }
+
+  .create-decision-card {
+    padding: 17px 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 44px;
+    margin-top: 12px;
+  }
+
+  .form-group textarea.decision-description-input {
+    height: 110px;
+    min-height: 110px;
+    max-height: 110px;
+  }
+
+  .decision-card {
+    padding: 15px;
+  }
+
+  .decision-card-header h3 {
+    font-size: 17px;
+  }
+
+  .decision-options-display li,
+  .decision-criteria-display li,
+  .scoring-display-row {
+    font-size: 12px;
+  }
+
+  .decision-actions {
+    flex-direction: column;
+  }
+
+  .decision-actions button {
+    width: 100%;
+  }
+
+  .edit-decision-form textarea.edit-description-input {
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+  }
+}
+
+/* =========================================================
+   DECISION FULL DETAILS
+   ========================================================= */
+
+.decision-full-details {
+  margin-top: 20px;
+  padding-top: 5px;
+  border-top: 1px solid #eeeae1;
+}
+
+.view-more-button {
+  background: #292929 !important;
+  color: #ffffff !important;
+}
+
+.view-more-button:hover {
+  background: #2bbbd7 !important;
+}
+
+/* Priority and Status helper text */
+
+.decision-select-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field-helper-text {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #777;
+}

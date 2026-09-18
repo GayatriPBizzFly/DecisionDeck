@@ -1,0 +1,65 @@
+### Get all decisions
+GET http://localhost:5000/api/decisions
+
+### Create a decision
+# POST http://localhost:5000/api/decisions
+# Content-Type: application/json
+
+# {
+#   "title": "Choose project database",
+#   "description": "Decide whether MongoDB Atlas is suitable for the project",
+#   "status": "Pending",
+#   "priority": "High"
+# }
+
+//Update a decision
+# PUT http://localhost:5000/api/decisions/6aaa55c51ee25078b9d39776
+# Content-Type: application/json
+
+# {
+#   "title": "Choose project database",
+#   "description": "Decide whether MongoDB Atlas is suitable for the project",
+#   "status": "In Progress",
+#   "priority": "High"
+# }
+
+//Delete a decision
+//DELETE http://localhost:5000/api/decisions/6aaa55c51ee25078b9d39776
+
+### Sign Up
+# POST http://localhost:5000/api/auth/signup
+# Content-Type: application/json
+
+# {
+#   "name": "Gayatri",
+#   "email": "gayatri@test.com",
+#   "password": "password123"
+# }
+
+# ### Sign In
+# POST http://localhost:5000/api/auth/signin
+# Content-Type: application/json
+
+# {
+#   "email": "gayatri@test.com",
+#   "password": "password123"
+# }
+
+//GET http://localhost:5000/api/decisions
+
+### Sign In
+
+# POST http://localhost:5000/api/auth/signin
+# Content-Type: application/json
+
+# {
+#   "email": "gayatri@test.com",
+#   "password": "password123"
+# }
+
+
+
+### Get Decisions With Authentication
+
+GET http://localhost:5000/api/decisions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFhNWUwMjEzNjc5MTJjZmY3ZTBhZGQiLCJlbWFpbCI6ImdheWF0cmlAdGVzdC5jb20iLCJpYXQiOjE3ODk1NTE0NTgsImV4cCI6MTc4OTU1NTA1OH0.ub37mKudBzpBqovMpLKFxqSKj4lttBoYWROBHwekC0w
