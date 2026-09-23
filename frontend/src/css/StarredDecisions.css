@@ -1,0 +1,72 @@
+/* =========================
+   STARRED DECISIONS
+========================= */
+
+.starred-decision-card {
+  /* background: white; */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.starred-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.starred-card-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.star-button {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  transition: transform 0.2s ease;
+}
+
+.star-button:hover {
+  transform: scale(1.1);
+}
+
+.starred-description {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.starred-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.starred-meta span {
+  font-size: 14px;
+}
+
+/* Empty Starred State */
+
+.empty-decisions {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.empty-decisions h3 {
+  margin-bottom: 8px;
+}
+
+.empty-decisions p {
+  margin: 0;
+  color: #666;
+}

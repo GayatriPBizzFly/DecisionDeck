@@ -233,7 +233,6 @@ select {
 
 }
 
-
 /* ---------- Small Tablets ---------- */
 @media (max-width: 850px) {
 
@@ -340,7 +339,6 @@ select {
 
 }
 
-
 /* ---------- Small Mobile ---------- */
 @media (max-width: 480px) {
 
@@ -387,7 +385,6 @@ select {
 
 }
 
-
 /* ---------- Very Small Mobile ---------- */
 @media (max-width: 375px) {
 
@@ -403,4 +400,297 @@ select {
     padding: 16px 12px;
   }
 
+}
+
+/* =========================================================
+   DASHBOARD - DARK MODE
+   ========================================================= */
+
+body.dark-mode .dashboard-layout {
+  background: #181818;
+  color: #f5f5f5;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+body.dark-mode .dashboard-sidebar {
+  background: #202020;
+  border-right-color: #3a3a3a;
+}
+
+body.dark-mode .sidebar-logo h2 {
+  color: #2bbbd7;
+}
+
+body.dark-mode .sidebar-item {
+  color: #c8c8c8;
+}
+
+body.dark-mode .sidebar-item:hover {
+  background: #2b2b2b;
+  color: #ffffff;
+}
+
+body.dark-mode .sidebar-item.active {
+  background: #123c45;
+  color: #2bbbd7;
+}
+
+body.dark-mode .logout-item {
+  color: #bbbbbb;
+}
+
+body.dark-mode .logout-item:hover {
+  background: #3a2424;
+  color: #ff7777;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+body.dark-mode .dashboard-main {
+  background: #181818;
+}
+
+body.dark-mode .dashboard-topbar h1 {
+  color: #f5f5f5;
+}
+
+body.dark-mode .dashboard-topbar p {
+  color: #aaaaaa;
+}
+
+
+/* =========================
+   MESSAGE
+   ========================= */
+
+body.dark-mode .dashboard-message {
+  background: #123c45;
+  border-color: #1d6472;
+  color: #7ee6f5;
+}
+
+
+/* =========================
+   COMMON SECTIONS
+   ========================= */
+
+body.dark-mode .dashboard-section {
+  background: #242424;
+  border-color: #3a3a3a;
+  color: #f5f5f5;
+}
+
+body.dark-mode .dashboard-section h1,
+body.dark-mode .dashboard-section h2 {
+  color: #f5f5f5;
+}
+
+body.dark-mode .dashboard-section > p {
+  color: #aaaaaa;
+}
+
+
+/* =========================
+   STATISTICS
+   ========================= */
+
+body.dark-mode .stat-card {
+  background: #242424;
+  border-color: #3a3a3a;
+  color: #f5f5f5;
+}
+
+body.dark-mode .stat-card p {
+  color: #aaaaaa;
+}
+
+body.dark-mode .stat-card h2 {
+  color: #ffffff;
+}
+
+
+/* =========================
+   RECENT DECISIONS
+   ========================= */
+
+body.dark-mode .recent-decision-card {
+  background: #292929;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .decision-main-info h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .decision-main-info p {
+  color: #aaaaaa;
+}
+
+body.dark-mode .decision-count {
+  background: #333333;
+  color: #dddddd;
+}
+
+
+/* =========================
+   EMPTY DECISIONS
+   ========================= */
+
+body.dark-mode .empty-decisions {
+  background: #292929;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .empty-decisions h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .empty-decisions p {
+  color: #aaaaaa;
+}
+
+
+/* =========================
+   DECISION BUTTON
+   ========================= */
+
+body.dark-mode .view-decision-button {
+  background: #2bbbd7;
+  color: #ffffff;
+}
+
+body.dark-mode .view-decision-button:hover {
+  background: #159bb8;
+}
+
+
+/* =========================
+   SUBSCRIPTION
+   ========================= */
+
+body.dark-mode .dashboard-plan-card {
+  background: #292929;
+  border-color: #3a3a3a;
+  color: #f5f5f5;
+}
+
+body.dark-mode .dashboard-plan-card h2,
+body.dark-mode .dashboard-plan-card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .dashboard-plan-card p {
+  color: #aaaaaa;
+}
+
+body.dark-mode .dashboard-plan-card button {
+  background: #333333;
+  color: #ffffff;
+  border-color: #444444;
+}
+
+
+/* =========================
+   SETTINGS
+   ========================= */
+
+body.dark-mode .settings-card {
+  background: #292929;
+  border-color: #3a3a3a;
+  color: #f5f5f5;
+}
+
+body.dark-mode .settings-card h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .settings-card label {
+  color: #dddddd;
+}
+
+body.dark-mode .settings-card input,
+body.dark-mode .settings-card textarea,
+body.dark-mode .settings-card select {
+  background: #202020;
+  color: #ffffff;
+  border-color: #444444;
+}
+
+body.dark-mode .settings-card input::placeholder {
+  color: #777777;
+}
+
+body.dark-mode .settings-password-hint {
+  color: #999999;
+}
+
+
+/* =========================
+   MODAL
+   ========================= */
+
+body.dark-mode .decision-modal-overlay {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+body.dark-mode .decision-modal {
+  background: #292929;
+  border-color: #444444;
+  color: #ffffff;
+}
+
+body.dark-mode .decision-modal h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .modal-label {
+  color: #2bbbd7;
+}
+
+body.dark-mode .modal-description {
+  color: #aaaaaa;
+}
+
+body.dark-mode .modal-details > div {
+  background: #333333;
+}
+
+body.dark-mode .modal-details span {
+  color: #999999;
+}
+
+body.dark-mode .modal-details strong {
+  color: #ffffff;
+}
+
+body.dark-mode .close-modal {
+  background: #3a3a3a;
+  color: #ffffff;
+}
+
+body.dark-mode .modal-close-button {
+  background: #2bbbd7;
+  color: #ffffff;
+}
+
+
+/* =========================
+   THEME TOGGLE
+   ========================= */
+
+body.dark-mode .dashboard-theme-toggle {
+  background: #292929;
+  border-color: #444444;
+  color: #ffffff;
+}
+
+body.dark-mode .dashboard-theme-toggle:hover {
+  border-color: #2bbbd7;
 }

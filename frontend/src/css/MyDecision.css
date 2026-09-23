@@ -138,6 +138,7 @@
   cursor: pointer;
   margin-top: 14px;
   transition: background 0.2s ease, transform 0.2s ease;
+  border: 1px solid;
 }
 
 .create-decision-button:hover {
@@ -228,6 +229,7 @@
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
+  border: 1px solid;
 }
 
 .option-input-row button:hover,
@@ -1220,4 +1222,11 @@
   font-size: 12px;
   line-height: 1.4;
   color: #777;
+}
+
+/* Recent Decisions Title */
+.recent-decisions-title {
+  margin-top: 30px;
+  margin-bottom: 18px;
+  font-size: 22px;
 }

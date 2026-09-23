@@ -889,12 +889,14 @@ function MyDecision({ onDecisionCreated }) {
 
           <div>
 
-            <h2>
-              All My Decisions
+            <h2 className="recent-decisions-title">
+              Recent Decisions
             </h2>
 
+            
+
             <p>
-              View and manage decisions created by you.
+              View your 3 most recent decisions.
             </p>
 
           </div>
@@ -925,8 +927,13 @@ function MyDecision({ onDecisionCreated }) {
 
           <div className="my-decision-list">
 
-            {decisions.map(
-              (decision) => (
+            {[...decisions]
+              .sort(
+                (a, b) =>
+                  new Date(b.createdAt) - new Date(a.createdAt)
+              )
+              .slice(0, 3)
+              .map((decision) => (
 
                 <div
                   className="decision-card"

@@ -5,6 +5,9 @@ import "../css/AuthPage.css";
 function AuthPage() {
   const [mode, setMode] = useState("signin");
 
+  //Forgot Password
+  const [forgotPassword, setForgotPassword] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,6 +17,7 @@ function AuthPage() {
   const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
+
 
   // Google Client ID
   const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
@@ -107,6 +111,41 @@ function AuthPage() {
     }
   }, [googleClientId]);
 
+//SMTP-Forgot Password
+const handleForgotPassword = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(
+      "http://localhost:5000/api/auth/forgot-password",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setMessage(data.message || "Unable to send reset link");
+      return;
+    }
+
+    setMessage(
+      "Password reset link has been sent to your email."
+    );
+  } catch (error) {
+    setMessage("Unable to connect to server");
+  }
+};
+
+
+//
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -184,76 +223,125 @@ function AuthPage() {
         <h1>DecisionDeck</h1>
 
         <h2>
-          {mode === "signin"
+          {/* {mode === "signin"
+            ? "Welcome Back"
+            : "Create Account"} */}
+            {forgotPassword
+            ? "Forgot Password"
+            : mode === "signin"
             ? "Welcome Back"
             : "Create Account"}
         </h2>
 
         <p className="auth-subtitle">
-          {mode === "signin"
+          {/* {mode === "signin"
+            ? "Sign in to manage your decisions."
+            : "Create your account and start managing decisions."} */}
+          {forgotPassword
+            ? "Enter your email and we'll send you a password reset link."
+            : mode === "signin"
             ? "Sign in to manage your decisions."
             : "Create your account and start managing decisions."}
+
         </p>
 
-        <form onSubmit={handleSubmit}>
+      <form
+  onSubmit={
+    forgotPassword
+      ? handleForgotPassword
+      : handleSubmit
+  }
+>
+  {/* Name field - only for Sign Up */}
+  {!forgotPassword && mode === "signup" && (
+    <input
+      type="text"
+      placeholder="Full Name"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      required
+    />
+  )}
 
-          {/* Name field - only for Sign Up */}
-          {mode === "signup" && (
-            <input
-              type="text"
-              placeholder="Full Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          )}
+  {/* Email */}
+  <input
+    type="email"
+    placeholder="Email Address"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    required
+  />
 
-          {/* Email */}
-          <input
-            type="email"
-            placeholder="Email Address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+  {/* Password - Sign In / Sign Up only */}
+  {!forgotPassword && (
+    <div className="password-field">
+      <input
+        type={showPassword ? "text" : "password"}
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
 
-          {/* Password + Eye Toggle */}
-          <div className="password-field">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+      <button
+        type="button"
+        className="password-toggle"
+        onClick={() =>
+          setShowPassword(!showPassword)
+        }
+        aria-label={
+          showPassword
+            ? "Hide password"
+            : "Show password"
+        }
+      >
+        {showPassword ? "👁️" : "🙈"}
+      </button>
+    </div>
+  )}
 
-            <button
-              type="button"
-              className="password-toggle"
-              onClick={() =>
-                setShowPassword(!showPassword)
-              }
-              aria-label={
-                showPassword
-                  ? "Hide password"
-                  : "Show password"
-              }
-            >
-              {showPassword ? "👁️" : "🙈"}
-            </button>
-          </div>
+  {/* Forgot Password Link */}
+  {!forgotPassword && mode === "signin" && (
+    <button
+      type="button"
+      className="forgot-password-link"
+      onClick={() => {
+        setForgotPassword(true);
+        setMessage("");
+      }}
+    >
+      Forgot Password?
+    </button>
+  )}
 
-          {/* Submit */}
-          <button
-            type="submit"
-            className="auth-submit"
-          >
-            {mode === "signin"
-              ? "Sign In"
-              : "Create Account"}
-          </button>
+  {/* Submit */}
+  <button
+    type="submit"
+    className="auth-submit"
+  >
+    {forgotPassword
+      ? "Send Reset Link"
+      : mode === "signin"
+      ? "Sign In"
+      : "Create Account"}
+  </button>
 
-        </form>
+    {/* Back to Sign In */}
+    {forgotPassword && (
+      <button
+        type="button"
+        className="forgot-back-button"
+        onClick={() => {
+          setForgotPassword(false);
+          setMessage("");
+        }}
+      >
+        ← Back to Sign In
+      </button>
+    )}
+  </form> 
+
+
 
         {/* Message */}
         {message && (
@@ -262,43 +350,49 @@ function AuthPage() {
           </p>
         )}
 
-        {/* Divider */}
-        <div className="divider">
-          <span>OR</span>
-        </div>
+        {!forgotPassword && (
+  <>
+          {/* Divider */}
+          <div className="divider">
+            <span>OR</span>
+          </div>
 
-        {/* Google Sign In */}
-        <div
-          id="google-signin-button"
-          className="google-signin-container"
-        ></div>
+          {/* Google Sign In */}
+          <div
+            id="google-signin-button"
+            className="google-signin-container"
+          ></div>
+        </>
+      )}
 
         {/* Switch Sign In / Sign Up */}
-        <p className="switch-auth">
+       {!forgotPassword && (
+  <p className="switch-auth">
 
-          {mode === "signin"
-            ? "Don't have an account?"
-            : "Already have an account?"}
+    {mode === "signin"
+      ? "Don't have an account?"
+      : "Already have an account?"}
 
-          <button
-            type="button"
-            className="link-button"
-            onClick={() => {
-              setMode(
-                mode === "signin"
-                  ? "signup"
-                  : "signin"
-              );
+    <button
+      type="button"
+      className="link-button"
+      onClick={() => {
+        setMode(
+          mode === "signin"
+            ? "signup"
+            : "signin"
+        );
 
-              setMessage("");
-            }}
-          >
-            {mode === "signin"
-              ? " Sign Up"
-              : " Sign In"}
-          </button>
+        setMessage("");
+      }}
+    >
+      {mode === "signin"
+        ? " Sign Up"
+        : " Sign In"}
+    </button>
 
-        </p>
+  </p>
+)}
 
       </div>
 

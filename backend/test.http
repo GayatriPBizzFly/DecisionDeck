@@ -1,15 +1,15 @@
 ### Get all decisions
-GET http://localhost:5000/api/decisions
+#GET http://localhost:5000/api/decisions
 
 ### Create a decision
 # POST http://localhost:5000/api/decisions
 # Content-Type: application/json
 
 # {
-#   "title": "Choose project database",
-#   "description": "Decide whether MongoDB Atlas is suitable for the project",
+#   "title": "Choose project database DB",
+#   "description": "Decide whether MongoDB Atlas is suitable for the project or not",
 #   "status": "Pending",
-#   "priority": "High"
+#   "priority": "Medium"
 # }
 
 //Update a decision
@@ -58,8 +58,20 @@ GET http://localhost:5000/api/decisions
 # }
 
 
-
 ### Get Decisions With Authentication
 
-GET http://localhost:5000/api/decisions
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFhNWUwMjEzNjc5MTJjZmY3ZTBhZGQiLCJlbWFpbCI6ImdheWF0cmlAdGVzdC5jb20iLCJpYXQiOjE3ODk1NTE0NTgsImV4cCI6MTc4OTU1NTA1OH0.ub37mKudBzpBqovMpLKFxqSKj4lttBoYWROBHwekC0w
+# GET http://localhost:5000/api/decisions
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFhNWUwMjEzNjc5MTJjZmY3ZTBhZGQiLCJlbWFpbCI6ImdheWF0cmlAdGVzdC5jb20iLCJpYXQiOjE3ODk1NTE0NTgsImV4cCI6MTc4OTU1NTA1OH0.ub37mKudBzpBqovMpLKFxqSKj4lttBoYWROBHwekC0w
+
+
+#Pinned and UnPinned Decision
+PATCH http://localhost:5000/api/decisions/6aaa55c51ee25078b9d39776/pin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFjZTJkYTQ0M2JjMWZiNTI5OGJkM2IiLCJpYXQiOjE3ODk5NzIzNjEsImV4cCI6MTc5MDA1ODc2MX0.Gar-6tBV0gkojMNhUzTzk1WHkpW5bBu7lVpkCbyS5dQ
+
+### Forgot Password
+POST http://localhost:5000/api/auth/forgot-password
+Content-Type: application/json
+
+{
+  "email": "gayatripardeshi121@gmail.com"
+}

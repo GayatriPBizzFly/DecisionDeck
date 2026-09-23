@@ -1042,3 +1042,32 @@
   }
 
 }
+
+/* =========================
+   PIN DECISION
+========================= */
+
+.decision-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pin-decision-button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #d4af37;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.pin-decision-button:hover {
+  background: rgba(43, 187, 215, 0.12);
+}
+
+.pin-decision-button.pinned {
+  transform: scale(1.05);
+}

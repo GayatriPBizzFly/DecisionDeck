@@ -1,4 +1,8 @@
+import { useTheme } from "./ThemeContext";
+
 function Header() {
+  const { darkMode, toggleTheme } = useTheme();
+
   return (
     <header className="header">
       <div className="logo">DecisionDeck</div>
@@ -8,9 +12,19 @@ function Header() {
         <a href="#subscription">Subscription</a>
       </nav>
 
-      <a href="/auth" className="sign-button">
-        Sign In
-      </a>
+      <div className="header-actions">
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {darkMode ? "☀️" : "🌙"}
+        </button>
+
+        <a href="/auth" className="sign-button">
+          Sign In
+        </a>
+      </div>
     </header>
   );
 }

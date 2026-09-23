@@ -2,6 +2,7 @@ import "../css/Dashboard.css";
 import { useEffect, useState } from "react";
 import MyDecision from "../components/MyDecision";
 import AllMyDecisions from "../components/AllMyDecisions";
+import StarredDecisions from "../components/StarredDecisions";
 
 function Dashboard() {
 
@@ -307,6 +308,18 @@ function Dashboard() {
 
           <button
             className={
+              activeSection === "starredDecisions"
+                ? "sidebar-item active"
+                : "sidebar-item"
+            }
+            onClick={() => setActiveSection("starredDecisions")}
+            >
+            <span>⭐</span>
+            <span>Starred</span>
+          </button>
+
+          <button
+            className={
               activeSection === "allMyDecisions"
                 ? "sidebar-item active"
                 : "sidebar-item"
@@ -347,6 +360,7 @@ function Dashboard() {
         </nav>
 
         <div className="sidebar-bottom">
+
 
           <button
             className="sidebar-item logout-item"
@@ -555,6 +569,13 @@ function Dashboard() {
             }}
             onDelete={handleDeleteDecision}
           />
+        )}
+
+        {/* Render The Starred Decisions */}
+        {/* Starred Decisions */}
+
+        {activeSection === "starredDecisions" && (
+          <StarredDecisions />
         )}
 
         {/* ========================= */}

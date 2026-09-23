@@ -52,6 +52,41 @@ function AllMyDecisions() {
     }
   };
 
+
+  //Pinned and UnPinned Decision
+const handleTogglePin = async (id) => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const response = await fetch(
+      `http://localhost:5000/api/decisions/${id}/pin`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setMessage(
+        data.message || "Failed to update pin"
+      );
+      return;
+    }
+
+    setMessage(data.message);
+
+    // Refresh decisions so UI gets latest pin state
+    fetchDecisions();
+
+  } catch (error) {
+    setMessage("Unable to connect to server");
+  }
+};
+
   // Calculate overall decision score
   const calculateDecisionScore = (decision) => {
     if (
@@ -715,12 +750,16 @@ function AllMyDecisions() {
 
                 <>
 
-                  <div className="decision-card-header">
+                 <div className="decision-card-header">
+                    <h3>{decision.title}</h3>
 
-                    <h3>
-                      {decision.title}
-                    </h3>
-
+                    <button
+                      type="button"
+                      className="pin-decision-button"
+                      onClick={() => handleTogglePin(decision._id)}
+                    >
+                      {decision.isPinned ? "⭐" : "✰"}
+                    </button>
                   </div>
 
                   <p className="decision-description">

@@ -228,10 +228,152 @@ const updateProfile = async (req, res) => {
   }
 };
 
+//SMPT - Forgot Password function:
+const crypto = require("crypto");
+const transporter = require("../utils/mailer");
+
+const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        message: "Email is required",
+      });
+    }
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({
+        message: "No account found with this email",
+      });
+    }
+
+    // Generate secure random token
+    const resetToken = crypto.randomBytes(32).toString("hex");
+
+    // Save token and expiry in MongoDB
+    user.resetPasswordToken = resetToken;
+    user.resetPasswordExpires = Date.now() + 15 * 60 * 1000; // 15 minutes
+
+    await user.save();
+
+    // Reset password link
+    const resetLink = `http://localhost:5173/reset-password/${resetToken}`;
+
+    await transporter.sendMail({
+      from: process.env.SMTP_USER,
+      to: user.email,
+      subject: "DecisionDeck - Reset Your Password",
+      html: `
+        <h2>Reset Your DecisionDeck Password</h2>
+
+        <p>Hello ${user.name || "User"},</p>
+
+        <p>
+          We received a request to reset your DecisionDeck password.
+        </p>
+
+        <p>
+          Click the button below to create a new password:
+        </p>
+
+        <a
+          href="${resetLink}"
+          style="
+            display:inline-block;
+            padding:12px 20px;
+            background:#2BBBD7;
+            color:white;
+            text-decoration:none;
+            border-radius:6px;
+          "
+        >
+          Reset Password
+        </a>
+
+        <p>
+          This link will expire in 15 minutes.
+        </p>
+
+        <p>
+          If you did not request a password reset, you can safely ignore this email.
+        </p>
+
+        <p>
+          — DecisionDeck Team
+        </p>
+      `,
+    });
+
+    res.status(200).json({
+      message: "Password reset link sent to your email",
+    });
+
+  } catch (error) {
+    console.error("Forgot password error:", error);
+
+    res.status(500).json({
+      message: "Unable to process password reset request",
+    });
+  }
+};
+
+//Add Reset Password API
+const resetPassword = async (req, res) => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    if (!password) {
+      return res.status(400).json({
+        message: "New password is required",
+      });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({
+        message: "Password must be at least 6 characters",
+      });
+    }
+
+    const user = await User.findOne({
+      resetPasswordToken: token,
+      resetPasswordExpires: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      return res.status(400).json({
+        message: "Invalid or expired password reset link",
+      });
+    }
+
+    user.password = await bcrypt.hash(password, 10);
+
+    user.resetPasswordToken = null;
+    user.resetPasswordExpires = null;
+
+    await user.save();
+
+    res.status(200).json({
+      message: "Password reset successfully",
+    });
+  } catch (error) {
+    console.error("Reset password error:", error);
+
+    res.status(500).json({
+      message: "Unable to reset password",
+    });
+  }
+};
+
 
 module.exports = {
   signup,
   signin,
   googleSignin,
   updateProfile,
+  forgotPassword,
+  resetPassword,
 };

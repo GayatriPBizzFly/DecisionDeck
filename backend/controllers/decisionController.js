@@ -99,9 +99,50 @@ const deleteDecision = async (req, res) => {
 };
 
 
+//Pin a decision and unpin a decision
+const togglePinDecision = async (req, res) => {
+  try {
+    const decision = await Decision.findOne({
+      _id: req.params.id,
+      userId: req.user.userId
+    });
+
+    if (!decision) {
+      return res.status(404).json({
+        message: "Decision not found"
+      });
+    }
+
+    decision.isPinned = !decision.isPinned;
+
+    if (decision.isPinned) {
+      decision.pinnedAt = new Date();
+    } else {
+      decision.pinnedAt = null;
+    }
+
+    await decision.save();
+
+    res.status(200).json({
+      message: decision.isPinned
+        ? "Decision pinned successfully"
+        : "Decision unpinned successfully",
+      decision
+    });
+
+  } catch (error) {
+    console.error("Toggle pin error:", error);
+
+    res.status(500).json({
+      message: "Server error"
+    });
+  }
+};
+
 module.exports = {
   getDecisions,
   createDecision,
   updateDecision,
   deleteDecision,
+  togglePinDecision,
 };
